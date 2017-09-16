@@ -17,6 +17,7 @@ public class ChatCliente extends Thread {
 	@Override
 	public void run() {
 		try {
+			Thread.currentThread().setName("MyChatCliente");
 			Socket cliente = new Socket(ip, PORT);
 			PrintWriter out = new PrintWriter(cliente.getOutputStream());
 			out.println(message);
